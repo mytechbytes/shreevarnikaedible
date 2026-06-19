@@ -3,6 +3,8 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import { createLogger } from "vite";
 
+import cloudflare from "@astrojs/cloudflare";
+
 /**
  * We pin Vite to v8 (latest) via package.json "overrides", which is newer than
  * the ^7 range Astro 6 declares. That combo emits a couple of known deprecation
@@ -47,11 +49,15 @@ export default defineConfig({
   output: "static",
   build: { format: "file" },
   server: { port: 5173 },
+
   // Dev toolbar is the source of the optimizeDeps.esbuildOptions deprecation
   // warning under Vite 8; not needed for a static marketing site.
   devToolbar: { enabled: false },
+
   vite: {
     plugins: [tailwindcss()],
     customLogger,
   },
+
+  adapter: cloudflare(),
 });
