@@ -1,0 +1,83 @@
+---
+import site from "../data/site.json";
+import themes from "../data/themes.json";
+import Icon from "./Icon.astro";
+const { brand, footer, contact, categories } = site;
+const shopCats = categories.filter((c) => c.id !== "all");
+---
+<footer class="site-footer">
+  <div class="wrap section" style="padding-block:56px">
+    <div class="foot-cols">
+      <!-- brand -->
+      <div>
+        <a class="brand" href="/" style="margin-bottom:1rem">
+          <img class="brand-logo" src={brand.logo} alt={`${brand.name} ${brand.suffix}`} style="height:54px" width="71" height="54" />
+          <span>
+            <span class="brand-name" style="color:#fff">{brand.name}</span>
+            <span class="brand-sub" style="display:block;color:var(--brand-300)">{brand.suffix}</span>
+          </span>
+        </a>
+        <p style="max-width:34ch;color:#b7afa3;font-size:.92rem">{footer.blurb}</p>
+        <div style="display:flex;gap:10px;margin-top:1rem">
+          {footer.social.map((s) => (
+            <a class="icon-btn" href={s.href} aria-label={s.label}
+               style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);color:#fff">
+              <Icon name={s.icon} size={18} />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- shop -->
+      <div>
+        <div class="foot-label">Shop</div>
+        {shopCats.map((c) => (
+          <a class="foot-link" href={`/products.html?cat=${c.id}`}>{c.label}</a>
+        ))}
+        <a class="foot-link" href="/products.html">View All</a>
+      </div>
+
+      <!-- company -->
+      <div>
+        <div class="foot-label">Company</div>
+        {footer.company.map((l) => (
+          <a class="foot-link" href={l.href}>{l.label}</a>
+        ))}
+      </div>
+
+      <!-- headquarters + theme controls -->
+      <div>
+        <div class="foot-label">Headquarters</div>
+        <p style="display:flex;gap:.5rem;font-size:.9rem;color:#cfc7bb"><Icon name="pin" size={16} /><span>{contact.address}</span></p>
+        <a class="foot-link" href={`mailto:${contact.email}`} style="display:flex;gap:.5rem;align-items:center"><Icon name="mail" size={16} />{contact.email}</a>
+        <a class="foot-link" href={contact.phoneHref} style="display:flex;gap:.5rem;align-items:center"><Icon name="phone" size={16} />{contact.phone}</a>
+
+        <div class="foot-label" style="margin-top:1.4rem">Choose a Theme</div>
+        <div class="theme-pick">
+          <span class="swatch"></span>
+          <select class="theme-select" data-theme-select aria-label="Select colour theme">
+            {themes.options.map((t) => <option value={t.value}>{t.label}</option>)}
+          </select>
+          <span class="chev"><Icon name="chev" size={16} /></span>
+        </div>
+        <div class="theme-swatches">
+          {themes.options.map((t) => (
+            <button type="button" data-theme-swatch={t.value} title={t.label} aria-pressed="false" style={`background:${t.swatch}`}></button>
+          ))}
+        </div>
+
+        <div class="foot-label" style="margin-top:1.2rem">Background</div>
+        <div class="bg-seg" role="radiogroup" aria-label="Page background">
+          <button type="button" data-bg-opt="white" role="radio" aria-pressed="true"><span class="dot white"></span>White</button>
+          <button type="button" data-bg-opt="tint" role="radio" aria-pressed="false"><span class="dot tint"></span>Light <span data-bg-theme-name>Theme</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" style="background:rgba(255,255,255,.1);margin:34px 0 20px"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:.82rem;color:#9a9286">
+      <span>{footer.copyright}</span>
+      <span>{footer.legal}</span>
+    </div>
+  </div>
+</footer>

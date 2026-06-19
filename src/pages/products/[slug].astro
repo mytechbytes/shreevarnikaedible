@@ -1,0 +1,156 @@
+---
+import Base from "../../layouts/Base.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import Icon from "../../components/Icon.astro";
+import itemsData from "../../data/items.json";
+import site from "../../data/site.json";
+
+export function getStaticPaths() {
+  return itemsData.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const items = itemsData;
+const catLabel = (id) => (site.categories.find((c) => c.id === id) || {}).label || id;
+const stars = "★★★★★".slice(0, item.rating) + "☆☆☆☆☆".slice(0, 5 - item.rating);
+const onwards = item.from.startsWith("₹");
+const related = [
+  ...items.filter((x) => x.id !== item.id && x.category === item.category),
+  ...items.filter((x) => x.category !== item.category),
+].slice(0, 4);
+
+// Per-index :checked rules for the pure-CSS gallery swap (injected per page).
+const galleryCss = item.gallery
+  .map((_, i) =>
+    `#g${i}:checked ~ .gallery-main .g-img[data-i="${i}"]{opacity:1;z-index:1;}\n` +
+    `#g${i}:checked ~ .gallery-thumbs label[for="g${i}"]{outline-color:var(--brand-500);}`
+  )
+  .join("\n");
+---
+<Base
+  title={`${item.name} — Shree Varnika Edible`}
+  description={item.short}
+  image={item.image}
+  canonical={`${site.seo.url}/products/${item.slug}.html`}
+  activeId=""
+>
+  <div data-product-detail>
+    <div class="wrap" style="padding-top:22px">
+      <nav style="font-size:.82rem;color:var(--ink-soft);display:flex;gap:.4rem;flex-wrap:wrap">
+        <a href="/" style="color:var(--brand-700)">Home</a><span>/</span>
+        <a href={`/products.html?cat=${item.category}`} style="color:var(--brand-700)">{catLabel(item.category)}</a><span>/</span>
+        <span>{item.name}</span>
+      </nav>
+    </div>
+
+    <section class="section" style="padding-top:26px">
+      <div class="wrap">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <!-- GALLERY (pure-CSS radio swap) -->
+          <div class="gallery-radios">
+            {item.gallery.map((_, i) => (
+              <input type="radio" name="gallery" id={`g${i}`} checked={i === 0} aria-label={`View image ${i + 1}`} />
+            ))}
+            <div class="gallery-main shadow-soft">
+              {item.badge && <span class="badge">{item.badge}</span>}
+              {item.gallery.map((src, i) => (
+                <img class="g-img" data-i={i} src={src} alt={`${item.name} — view ${i + 1}`} />
+              ))}
+            </div>
+            <div class="gallery-thumbs">
+              {item.gallery.map((src, i) => (
+                <label class="gallery-thumb" for={`g${i}`}><img src={src} alt="" loading="lazy" /></label>
+              ))}
+            </div>
+          </div>
+
+          <!-- INFO -->
+          <div>
+            <span class="tag">{item.collection}</span>
+            <h1 class="serif" style="font-size:clamp(2rem,6vw,2.8rem);margin:.6rem 0 .4rem">{item.name}</h1>
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem">
+              <span class="stars">{stars}</span>
+              <span class="muted" style="font-size:.85rem">Premium grade · 100% vegetarian</span>
+            </div>
+            <div style="font-family:'Marcellus',serif;font-size:1.7rem;color:var(--brand-700);margin-bottom:1rem">{item.from}{onwards && <span style="font-size:.9rem;color:var(--ink-soft)"> onwards</span>}</div>
+            <p style="color:var(--ink-soft)">{item.desc}</p>
+
+            <div style="margin:1.4rem 0">
+              <div class="label">Available sizes</div>
+              <div class="size-opts">
+                {item.sizes.map((s, i) => (
+                  <>
+                    <input type="radio" name="pdp-size" id={`size-${i}`} value={s} data-size-input checked={i === 0} />
+                    <label class="chip" for={`size-${i}`}>{s}</label>
+                  </>
+                ))}
+              </div>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button type="button" class="btn btn-primary" style="flex:1;min-width:180px" data-add={item.id}>Add to Enquiry</button>
+              <a class="btn btn-dark" href="/contact.html">Request a Quote</a>
+            </div>
+
+            <ul style="list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:.6rem">
+              {item.notes.map((n) => (
+                <li style="display:flex;gap:.6rem;align-items:center;font-size:.92rem"><span style="color:var(--brand-600)"><Icon name="leaf" size={18} /></span>{n}</li>
+              ))}
+            </ul>
+
+            <div style="display:flex;gap:18px;margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.84rem;color:var(--ink-soft);flex-wrap:wrap">
+              <span style="display:inline-flex;gap:.4rem;align-items:center"><Icon name="phone" size={16} /> <a href={site.contact.phoneHref} style="color:var(--brand-700)">{site.contact.phone}</a></span>
+              <span style="display:inline-flex;gap:.4rem;align-items:center"><Icon name="mail" size={16} /> <a href={`mailto:${site.contact.email}`} style="color:var(--brand-700)">Email</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS & SPECIFICATIONS -->
+    <section class="section band-brand" style="padding-block:clamp(40px,8vw,80px)">
+      <div class="wrap">
+        <p class="eyebrow mb-2">Product Information</p>
+        <h2 style="font-size:clamp(1.7rem,5vw,2.4rem)">Details &amp; specifications</h2>
+        <div class="grid lg:grid-cols-2 gap-8" style="margin-top:26px">
+          <div class="card" style="padding:clamp(18px,3vw,28px)">
+            <h3 class="serif" style="font-size:1.2rem;margin-bottom:.6rem">Specifications</h3>
+            {item.specs.map((s) => (
+              <div style="display:flex;justify-content:space-between;gap:18px;padding:.72rem 0;border-bottom:1px solid var(--line)">
+                <span class="muted" style="font-size:.88rem">{s.label}</span>
+                <span style="font-weight:600;font-size:.9rem;text-align:right">{s.value}</span>
+              </div>
+            ))}
+          </div>
+          <div style="display:grid;gap:16px;align-content:start">
+            <div class="card" style="padding:clamp(18px,3vw,26px)">
+              <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem"><span style="color:var(--brand-600)"><Icon name="leaf" size={18} /></span><h3 class="serif" style="font-size:1.15rem">How to use</h3></div>
+              <p class="muted" style="font-size:.95rem">{item.usage}</p>
+            </div>
+            <div class="card" style="padding:clamp(18px,3vw,26px)">
+              <h3 class="serif" style="font-size:1.15rem;margin-bottom:.4rem">Storage &amp; shelf life</h3>
+              <p class="muted" style="font-size:.95rem">{item.storage}</p>
+            </div>
+            <div class="card" style="padding:clamp(18px,3vw,26px)">
+              <h3 class="serif" style="font-size:1.15rem;margin-bottom:.7rem">Ideal for</h3>
+              <div style="display:flex;flex-wrap:wrap;gap:8px">{item.applications.map((a) => <span class="tag">{a}</span>)}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="ornament" style="margin-bottom:30px;margin-top:30px"></div>
+        <h2 style="font-size:clamp(1.6rem,5vw,2.2rem);margin-bottom:24px">You may also like</h2>
+        <div class="prod-grid cols-4">
+          {related.map((p) => <ProductCard item={p} />)}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style set:html={galleryCss}></style>
+</Base>

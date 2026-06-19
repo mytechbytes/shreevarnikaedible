@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="tuscan-sun">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Shree Varnika Edible</title>
+  <meta name="description" content="Browse edible silver & gold leaves, saffron, hing, coated spices and pooja articles.">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div data-site-header></div>
+
+  <main data-shop>
+    <!-- PAGE HEAD -->
+    <section class="band-brand">
+      <div class="wrap" style="padding-block:clamp(36px,7vw,64px)">
+        <p class="eyebrow mb-2">Our Catalogue</p>
+        <h1 data-shop-title style="font-size:clamp(2.2rem,7vw,3.4rem)">All Products</h1>
+        <p class="muted" style="max-width:56ch;margin-top:.6rem">Hygienic, pure and 100% vegetarian — edible silver &amp; gold leaves, premium spices and pooja essentials, crafted with automated precision.</p>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <section class="section" style="padding-top:28px">
+      <div class="wrap">
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:22px">
+          <div data-shop-chips style="display:flex;flex-wrap:wrap;gap:8px"></div>
+          <div style="display:flex;align-items:center;gap:10px;margin-left:auto">
+            <span class="muted" style="font-size:.84rem" data-shop-count></span>
+            <div class="theme-pick" style="min-width:170px">
+              <select class="field" data-shop-sort aria-label="Sort products" style="padding-right:2rem">
+                <option value="featured">Sort: Featured</option>
+                <option value="name">Name (A–Z)</option>
+                <option value="price-asc">Price (low→high)</option>
+                <option value="price-desc">Price (high→low)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="prod-grid cols-4" data-shop-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <script src="main.js"></script>
+</body>
+</html>

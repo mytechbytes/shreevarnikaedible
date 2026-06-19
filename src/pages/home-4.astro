@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import ProductCard from "../components/ProductCard.astro";
+import itemsData from "../data/items.json";
+import site from "../data/site.json";
+const items = itemsData;
+const pick = (ids) => ids.map((id) => items.find((p) => p.id === id)).filter(Boolean);
+const trio = pick(["saffron", "gold-leaves", "pooja"]);
+const ig = site.instagram.images;
+---
+<Base title="Shree Varnika Edible — A Boutique House of Edible Luxury" activeId="home">
+  <!-- CENTERED INTRO -->
+  <section class="section" style="text-align:center;padding-bottom:clamp(28px,5vw,48px)">
+    <div class="wrap" style="max-width:920px">
+      <p class="eyebrow mb-5">A Boutique House of Edible Luxury</p>
+      <h1 style="font-size:clamp(2.6rem,8vw,4.8rem);line-height:1.05">Where tradition is<br>plated in gold.</h1>
+      <p class="muted" style="font-size:1.08rem;max-width:52ch;margin:1.3rem auto 0">Hygienic, 100% vegetarian gold &amp; silver leaves, premium saffron and hing, and silver-coated delicacies — crafted for those who set a finer table.</p>
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:1.9rem;flex-wrap:wrap">
+        <a class="btn btn-primary" href="/products.html">Enter the Boutique</a>
+        <a class="btn btn-outline" href="/about.html">Our Craft</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIDE IMAGE BAND + OVERLAPPING CARDS -->
+  <section>
+    <div class="wrap">
+      <div class="shadow-soft" style="border-radius:26px;overflow:hidden;aspect-ratio:21/9;max-height:520px;position:relative">
+        <img class="hero-img" src="/assets/images/dryfruits.png" alt="Gold and silver coated delicacies" />
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,.55),transparent 55%)"></div>
+      </div>
+    </div>
+    <div class="wrap" style="position:relative;margin-top:clamp(-60px,-7vw,-90px);z-index:2">
+      <div class="prod-grid">
+        {trio.map((p) => <ProductCard item={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES STRIP -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid sm:grid-cols-3 gap-6 text-center">
+        <div><div class="serif" style="font-size:1.8rem;color:var(--brand-700)">Hygienic</div><p class="muted" style="font-size:.9rem">Touch-free KV Automation at every critical stage.</p></div>
+        <div style="border-inline:1px solid var(--line)"><div class="serif" style="font-size:1.8rem;color:var(--brand-700)">100% Vegetarian</div><p class="muted" style="font-size:.9rem">Certified pure — luxury without compromise.</p></div>
+        <div><div class="serif" style="font-size:1.8rem;color:var(--brand-700)">Since 2010</div><p class="muted" style="font-size:.9rem">Over a decade redefining the art of vark.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFFRON SPLIT -->
+  <section class="band-dark">
+    <div class="wrap section">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal" style="border-radius:22px;overflow:hidden;aspect-ratio:4/3"><img class="hero-img" src="/assets/images/saffron.png" alt="Saffron" /></div>
+        <div class="reveal">
+          <p class="eyebrow mb-3">The Crown Jewel</p>
+          <h2 style="color:#fff;font-size:clamp(2rem,6vw,3rem)">Saffron, the finest quality</h2>
+          <p style="color:#cbc3b6;margin-top:1rem;max-width:48ch">Handpicked for vibrant colour, distinct aroma and exquisite flavour. Sourced from reputable farms to guarantee authenticity — a touch of luxury for every culinary creation.</p>
+          <a class="btn btn-primary" href="/products/varnika-premium-saffron.html" style="margin-top:1.6rem">Discover Saffron</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL CATALOGUE -->
+  <section class="section">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;max-width:44ch;margin:0 auto 34px">
+        <p class="eyebrow mb-2">The Collection</p>
+        <h2 style="font-size:clamp(2rem,6vw,3rem)">Curated for the connoisseur</h2>
+      </div>
+      <div class="prod-grid cols-4">
+        {items.map((p) => <ProductCard item={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section band-brand">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:24px">
+        <p class="eyebrow mb-2">{site.instagram.handle}</p>
+        <h2 style="font-size:clamp(1.8rem,5vw,2.4rem)">Inside the atelier</h2>
+      </div>
+      <div class="ig-grid">
+        {ig.map((src) => <a class="ig-cell" href="#"><img src={src} alt="" loading="lazy" /></a>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="band-deep shadow-soft" style="border-radius:24px;padding:clamp(28px,6vw,56px);text-align:center">
+        <h2 style="color:#fff;font-size:clamp(1.9rem,5.5vw,2.8rem);max-width:20ch;margin:0 auto">Set a finer table with Varnika</h2>
+        <p style="color:#d9d2c6;max-width:48ch;margin:1rem auto 0">Wholesale, export and bespoke coating enquiries welcome.</p>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:1.6rem;flex-wrap:wrap">
+          <a class="btn btn-primary" href="/contact.html">Request a Quote</a>
+          <a class="btn btn-outline" href={`mailto:${site.contact.email}`} style="border-color:rgba(255,255,255,.4);color:#fff">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,13 @@
+---
+import Base from "../layouts/Base.astro";
+import LegalDoc from "../components/LegalDoc.astro";
+import site from "../data/site.json";
+---
+<Base
+  title="Privacy Policy — Shree Varnika Edible"
+  description="How Shree Varnika Edible collects, uses, and protects your personal information."
+  canonical={`${site.seo.url}/privacy.html`}
+  activeId=""
+>
+  <LegalDoc slug="privacy" />
+</Base>

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "saffron",
+    "slug": "varnika-premium-saffron",
+    "name": "Varnika Premium Saffron",
+    "category": "food",
+    "collection": "New Additions",
+    "badge": "Bestseller",
+    "rating": 5,
+    "from": "₹ 449",
+    "sizes": ["1 GM", "2 GM", "5 GM"],
+    "short": "Handpicked, deep-crimson saffron prized for its vivid colour, distinct aroma and exquisite flavour.",
+    "desc": "We take great pride in offering the finest quality saffron. Carefully handpicked, our saffron is known for its vibrant colour, distinct aroma and exquisite flavour. Sourced from reputable farms to ensure authenticity and optimal quality, Varnika saffron adds a touch of luxury to a wide range of culinary creations.",
+    "notes": ["Hand-picked threads", "Rich aroma & colour", "100% pure, no fillers"],
+    "image": "/assets/images/saffron.png",
+    "gallery": [
+      "/assets/images/saffron.png",
+      "/assets/images/saffron-detail.jpg",
+      "/assets/images/saffron-warm.jpg",
+      "/assets/images/saffron-cool.jpg"
+    ],
+    "specs": [
+      { "label": "Product type", "value": "Premium Mongra Saffron" },
+      { "label": "Form", "value": "Whole threads (stigma)" },
+      { "label": "Net weight", "value": "1g · 2g · 5g" },
+      { "label": "Diet", "value": "100% Vegetarian" },
+      { "label": "Shelf life", "value": "24 months" },
+      { "label": "Origin", "value": "Select saffron farms" }
+    ],
+    "usage": "Steep 4–5 strands in warm milk or water for ~10 minutes, then add to biryani, kheer, halwa or beverages for colour, aroma and flavour.",
+    "storage": "Keep in the original airtight pack in a cool, dry place away from direct sunlight. Best used within 24 months.",
+    "applications": ["Biryani & Pulao", "Kheer & Halwa", "Beverages", "Gifting"]
+  },
+  {
+    "id": "hing",
+    "slug": "varnika-premium-hing",
+    "name": "Varnika Premium Hing",
+    "category": "food",
+    "collection": "New Additions",
+    "badge": "",
+    "rating": 5,
+    "from": "₹ 199",
+    "sizes": ["50 GM", "100 GM", "250 GM"],
+    "short": "Strong, aromatic asafoetida that lends an unmistakable depth to dals, curries and tempering.",
+    "desc": "Varnika Premium Hing is milled to a fine, consistent grade with a powerful aroma that blooms in hot oil. A pinch transforms everyday dals, curries and pickles — a kitchen essential crafted to exacting purity standards.",
+    "notes": ["Bold, lasting aroma", "Vegetarian & pure", "Finely milled grade"],
+    "image": "/assets/images/hing.jpg",
+    "gallery": [
+      "/assets/images/hing.jpg",
+      "/assets/images/hing-detail.jpg",
+      "/assets/images/hing-warm.jpg",
+      "/assets/images/hing-cool.jpg"
+    ],
+    "specs": [
+      { "label": "Product type", "value": "Compounded Asafoetida (Hing)" },
+      { "label": "Form", "value": "Fine granules / powder" },
+      { "label": "Net weight", "value": "50g · 100g · 250g" },
+      { "label": "Aroma", "value": "Strong & long-lasting" },
+      { "label": "Diet", "value": "100% Vegetarian" },
+      { "label": "Shelf life", "value": "18 months" }
+    ],
+    "usage": "Add a small pinch to hot oil or ghee while tempering dals, sabzis, kadhi and pickles to release its signature aroma.",
+    "storage": "Store in a tightly sealed container in a cool, dry place to preserve aroma. Keep away from moisture.",
+    "applications": ["Dal & Kadhi", "Tempering", "Pickles", "Curries"]
+  },
+  {
+    "id": "silver-cardamom",
+    "slug": "varnika-premium-silver-coated-cardamom-elaichi",
+    "name": "Varnika Premium Silver-Coated Cardamom (Elaichi)",
+    "category": "herbs",
+    "collection": "New Additions",
+    "badge": "New",
+    "rating": 5,
+    "from": "₹ 349",
+    "sizes": ["100 GM", "250 GM"],
+    "short": "Fragrant green cardamom delicately wrapped in edible silver — a royal mouth-freshener and garnish.",
+    "desc": "Whole green cardamom dressed in hygienic, 100% vegetarian edible silver leaf. A regal after-dinner mukhwas and a striking garnish for mithai, paan and festive thaals — where fragrance meets opulence.",
+    "notes": ["Edible silver coating", "Whole, aromatic pods", "Festive & gifting favourite"],
+    "image": "/assets/images/cardamom.jpg",
+    "gallery": [
+      "/assets/images/cardamom.jpg",
+      "/assets/images/cardamom-detail.jpg",
+      "/assets/images/cardamom-warm.jpg",
+      "/assets/images/cardamom-cool.jpg"
+    ],
+    "specs": [
+      { "label": "Product type", "value": "Silver-coated Green Cardamom" },
+      { "label": "Form", "value": "Whole pods with edible silver vark" },
+      { "label": "Net weight", "value": "100g · 250g" },
+      { "label": "Coating", "value": "Edible silver leaf" },
+      { "label": "Diet", "value": "100% Vegetarian" },
+      { "label": "Shelf life", "value": "12 months" }
+    ],
+    "usage": "Serve as a royal after-meal mouth freshener, or use to garnish mithai, paan and festive thaals.",
+    "storage": "Keep in a cool, dry place in an airtight container. Handle gently to protect the silver coating.",
+    "applications": ["Mouth freshener", "Mithai garnish", "Paan", "Festive gifting"]
+  },
+  {
+    "id": "pooja",
+    "slug": "various-silver-and-gold-coated-pooja-articles",
+    "name": "Various Silver & Gold-Coated Pooja Articles",
+    "category": "pooja",
+    "collection": "Pooja Articles",
+    "badge": "",
+    "rating": 5,
+    "from": "On request",
+    "sizes": ["Assorted"],
+    "short": "Coated supari, elaichi, cloves and ritual items for an elevated, auspicious pooja thali.",
+    "desc": "A curated range of silver and gold-coated pooja essentials — supari, elaichi, cloves and decorative items — crafted for temples, festivals and ceremonial offerings. Each piece is coated under hygienic, automated conditions for purity you can trust.",
+    "notes": ["Temple-grade finish", "Auspicious gifting", "Hygienic automated coating"],
+    "image": "/assets/images/pooja.jpg",
+    "gallery": [
+      "/assets/images/pooja.jpg",
+      "/assets/images/pooja-detail.jpg",
+      "/assets/images/pooja-warm.jpg",
+      "/assets/images/pooja-cool.jpg"
+    ],
+    "specs": [
+      { "label": "Product type", "value": "Silver & gold-coated pooja items" },
+      { "label": "Contents", "value": "Coated supari, elaichi, cloves & décor" },
+      { "label": "Coating", "value": "Edible silver & gold leaf" },
+      { "label": "Packaging", "value": "Assorted gift packs" },
+      { "label": "Customisation", "value": "Available on request" },
+      { "label": "Diet", "value": "100% Vegetarian" }
+    ],
+    "usage": "Present on the pooja thali, offer as prasad or shagun, or use to adorn festive and ceremonial décor.",
+    "storage": "Store in a dry place away from humidity. Handle delicately to preserve the metallic finish.",
+    "applications": ["Festivals", "Weddings", "Temple offerings", "Shagun gifting"]
+  },
+  {
+    "id": "gold-leaves",
+    "slug": "gold-leaves-and-flakes",
+    "name": "Gold Leaves & Flakes",
+    "category": "leaves",
+    "collection": "Silver & Gold Collection",
+    "badge": "Signature",
+    "rating": 5,
+    "from": "On request",
+    "sizes": ["10 Leaves", "25 Leaves", "Flakes Jar"],
+    "short": "Ultra-thin edible gold for sweets, chyawanprash and luxury culinary garnishing.",
+    "desc": "Perfectly beaten, ultra-thin edible gold leaves and flakes for premium sweets, chyawanprash and fine-dining presentation. Produced with KV Automation technology — eliminating human touch from critical stages — for a certified hygienic, 100% vegetarian finish.",
+    "notes": ["100% vegetarian", "Automated, touch-free process", "Connoisseur grade"],
+    "image": "/assets/images/gold-leaves.jpg",
+    "gallery": [
+      "/assets/images/gold-leaves.jpg",
+      "/assets/images/gold-leaves-detail.jpg",
+      "/assets/images/gold-leaves-warm.jpg",
+      "/assets/images/gold-leaves-cool.jpg"
+    ],
+    "specs": [
+      { "label": "Product type", "value": "Edible Gold Leaf (Vark)" },
+      { "label": "Form", "value": "Loose leaves & flakes" },
+      { "label": "Pack options", "value": "10 · 25 leaves · flakes jar" },
+      { "label": "Leaf size", "value": "≈ 80 × 80 mm" },
+      { "label": "Process", "value": "KV Automation, touch-free" },
+      { "label": "Diet", "value": "Food-grade · 100% Vegetarian" }
+    ],
+    "usage": "Lift gently with a dry brush or knife and apply to sweets, chyawanprash, chocolates or plated dishes just before serving.",
+    "storage": "Keep booklets flat and dry at room temperature, away from drafts and moisture.",
+    "applications": ["Mithai & Sweets", "Chyawanprash", "Chocolates", "Fine-dining décor"]
+  },
+  {
+    "id": "silver-leaves",
+    "slug": "silver-leaves-and-flakes",
+    "name": "Silver Leaves & Flakes",
+    "category": "leaves",
+    "collection": "Silver & Gold Collection",
+    "badge": "",
+    "rating": 5,
+    "from": "On request",
+    "sizes": ["50 Leaves", "100 Leaves", "Flakes Jar"],
+    "short": "Meticulously crafted edible silver vark for Indian sweets, paan and confections.",
+    "desc": "Our silver leaves are meticulously crafted to perfection. These edible metallic sheets are widely used in Indian sweets and confections, imparting elegance and opulence to the dining experience. Strict quality standards ensure they meet the expectations of home cooks and professional chefs alike.",
+    "notes": ["Edible vark", "Pure & hygienic", "Chef & home favourite"],
+    "image": "/assets/images/silver-leaves.jpg",
+    "gallery": [
+      "/assets/images/silver-leaves.jpg",
+      "/assets/images/silver-leaves-detail.jpg",
+      "/assets/images/silver-leaves-warm.jpg",
+      "/assets/images/silver-leaves-cool.jpg"
+    ],
+    "specs": [
+      { "label": "Product type", "value": "Edible Silver Leaf (Chandi Vark)" },
+      { "label": "Form", "value": "Loose leaves & flakes" },
+      { "label": "Pack options", "value": "50 · 100 leaves · flakes jar" },
+      { "label": "Leaf size", "value": "≈ 80 × 80 mm" },
+      { "label": "Process", "value": "KV Automation, touch-free" },
+      { "label": "Diet", "value": "Food-grade · 100% Vegetarian" }
+    ],
+    "usage": "Apply gently over mithai, paan, dry fruits and confections for an elegant, edible silver finish.",
+    "storage": "Keep booklets flat and dry at room temperature, away from drafts and moisture.",
+    "applications": ["Mithai & Barfi", "Paan", "Dry fruits", "Confections"]
+  }
+]

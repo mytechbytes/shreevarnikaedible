@@ -1,0 +1,131 @@
+---
+import Base from "../layouts/Base.astro";
+import ProductCard from "../components/ProductCard.astro";
+import itemsData from "../data/items.json";
+import site from "../data/site.json";
+const items = itemsData;
+const pick = (ids) => ids.map((id) => items.find((p) => p.id === id)).filter(Boolean);
+const trio = pick(["saffron", "gold-leaves", "silver-cardamom"]);
+const tiles = [
+  { id: "food", label: "Food Products", img: "/assets/images/hing.jpg" },
+  { id: "herbs", label: "Herbs & Spices", img: "/assets/images/cardamom.jpg" },
+  { id: "pooja", label: "Pooja Articles", img: "/assets/images/pooja.jpg" },
+  { id: "leaves", label: "Silver & Gold", img: "/assets/images/gold-leaves.jpg" },
+];
+---
+<Base title="Shree Varnika Edible — The House of Pure Indulgence" activeId="home">
+  <!-- EDITORIAL HERO -->
+  <section class="section" style="padding-top:clamp(24px,4vw,44px)">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7" style="grid-column:span 7">
+          <p class="eyebrow mb-4"><span class="kicker-line"></span>&nbsp; The House of Pure Indulgence</p>
+          <h1 style="font-size:clamp(2.7rem,8.5vw,5rem);letter-spacing:-.01em">Gilded flavours,<br>crafted to last<br>generations.</h1>
+          <p class="muted" style="font-size:1.06rem;max-width:46ch;margin-top:1.3rem">From edible gold &amp; silver vark to handpicked saffron and aromatic hing — every Shree Varnika creation marries Indian heritage with automated, certified-hygienic precision.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:1.8rem">
+            <a class="btn btn-primary" href="/products.html">Discover the House</a>
+            <a class="btn btn-ghost" href="/about.html" style="display:inline-flex;align-items:center;gap:.4rem">Since 2010 →</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5" style="grid-column:span 5">
+          <div class="grid grid-cols-2 gap-3">
+            <div class="shadow-soft" style="border-radius:20px;overflow:hidden;aspect-ratio:3/4;grid-row:span 2"><img class="hero-img" src="/assets/images/dryfruits.png" alt="Coated dry fruits" /></div>
+            <div style="border-radius:20px;overflow:hidden;aspect-ratio:1/1"><img class="hero-img" src="/assets/images/saffron.png" alt="Saffron" /></div>
+            <div style="border-radius:20px;overflow:hidden;aspect-ratio:1/1"><img class="hero-img" src="/assets/images/gold-leaves.jpg" alt="Gold leaves" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <section class="band-deep">
+    <div class="wrap" style="padding-block:16px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:center;align-items:center;font-family:'Marcellus',serif;font-size:1.05rem;color:#fff">
+        <span>Edible Gold</span><span style="color:var(--brand-400)">✦</span>
+        <span>Pure Silver Vark</span><span style="color:var(--brand-400)">✦</span>
+        <span>Kashmiri Saffron</span><span style="color:var(--brand-400)">✦</span>
+        <span>Premium Hing</span><span style="color:var(--brand-400)">✦</span>
+        <span>Pooja Articles</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED TRIO -->
+  <section class="section">
+    <div class="wrap">
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:end;justify-content:space-between;margin-bottom:30px">
+        <div>
+          <p class="eyebrow mb-2">The Signatures</p>
+          <h2 style="font-size:clamp(2rem,6vw,3rem)">Three icons of the house</h2>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/products.html">View All</a>
+      </div>
+      <div class="prod-grid">
+        {trio.map((p) => <ProductCard item={p} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY ROW 1 -->
+  <section class="band-brand">
+    <div class="wrap section">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal" style="border-radius:22px;overflow:hidden;aspect-ratio:5/4"><img class="hero-img" src="/assets/images/silver-leaves.jpg" alt="Silver and gold leaves" /></div>
+        <div class="reveal">
+          <p class="eyebrow mb-3">Chapter I · The Vark</p>
+          <h2 style="font-size:clamp(2rem,6vw,3rem)">Beaten thin as breath, pure as intention</h2>
+          <p class="muted" style="margin-top:1rem;max-width:48ch">Our silver and gold leaves are meticulously crafted to perfection — edible metallic sheets that bring elegance and opulence to Indian sweets and confections, made under strict, automated quality standards.</p>
+          <div style="display:flex;gap:10px;margin-top:1.6rem;flex-wrap:wrap">
+            <a class="btn btn-primary" href="/products/gold-leaves-and-flakes.html">Gold Leaves</a>
+            <a class="btn btn-outline" href="/products/silver-leaves-and-flakes.html">Silver Leaves</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY ROW 2 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal" style="order:2">
+          <p class="eyebrow mb-3">Chapter II · The Spice</p>
+          <h2 style="font-size:clamp(2rem,6vw,3rem)">A single thread worth its weight in gold</h2>
+          <p class="muted" style="margin-top:1rem;max-width:48ch">Carefully handpicked saffron — vibrant in colour, distinct in aroma, exquisite in flavour. Sourced from reputable farms for authenticity, it lends luxury and visual appeal to every culinary creation.</p>
+          <a class="btn btn-primary" href="/products/varnika-premium-saffron.html" style="margin-top:1.6rem">Discover Saffron</a>
+        </div>
+        <div class="reveal" style="order:1;border-radius:22px;overflow:hidden;aspect-ratio:5/4"><img class="hero-img" src="/assets/images/saffron.png" alt="Saffron" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY SCROLLER -->
+  <section class="section band-deep">
+    <div class="wrap">
+      <div style="margin-bottom:24px">
+        <p class="eyebrow mb-2">The Departments</p>
+        <h2 style="color:#fff;font-size:clamp(1.9rem,5.5vw,2.6rem)">Shop by collection</h2>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {tiles.map((t) => (
+          <a class="cat-tile" href={`/products.html?cat=${t.id}`}><img src={t.img} alt={t.label} /><div class="cat-tile-cap"><h3>{t.label}</h3><span class="more">Explore →</span></div></a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="band-brand shadow-soft" style="border-radius:24px;padding:clamp(28px,6vw,56px);text-align:center">
+        <p class="eyebrow mb-3">Trade &amp; Bulk Enquiries</p>
+        <h2 style="font-size:clamp(1.9rem,5.5vw,2.8rem);max-width:20ch;margin:0 auto">Carry the house of Varnika</h2>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:1.6rem;flex-wrap:wrap">
+          <a class="btn btn-primary" href="/contact.html">Request a Quote</a>
+          <a class="btn btn-outline" href={site.cta.phoneHref}>{site.cta.phone}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

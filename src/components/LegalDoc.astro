@@ -1,0 +1,38 @@
+---
+import site from "../data/site.json";
+interface Props { slug: "terms" | "privacy"; }
+const { slug } = Astro.props;
+const doc = site.legal.docs[slug];
+const c = site.legal.contact;
+---
+<section class="band-brand">
+  <div class="wrap" style="padding-block:clamp(36px,7vw,64px)">
+    <p class="eyebrow mb-2">Legal</p>
+    <h1 style="font-size:clamp(2.2rem,7vw,3.4rem)">{doc.title}</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <article class="legal">
+      <p class="legal-intro">{doc.intro}</p>
+
+      {doc.sections.map((s) => (
+        <div class="legal-section">
+          <h2 class="serif">{s.heading}</h2>
+          <p>{s.body}</p>
+        </div>
+      ))}
+
+      {doc.closing.map((p) => <p class="legal-note">{p}</p>)}
+
+      <div class="legal-contact">
+        <strong>{c.entity}</strong><br />
+        {c.address}<br />
+        <a href={`mailto:${c.email}`} style="color:var(--brand-700)">{c.email}</a>
+        <span style="opacity:.5"> · </span>
+        <a href={c.website} style="color:var(--brand-700)">{c.website}</a>
+      </div>
+    </article>
+  </div>
+</section>

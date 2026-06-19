@@ -1,0 +1,164 @@
+{
+  "brand": {
+    "name": "Shree Varnika Edible",
+    "suffix": "Pvt. Ltd.",
+    "logo": "/assets/images/logo.png",
+    "tagline": "Royal Craftsmanship, Pure Ingredients"
+  },
+  "seo": {
+    "title": "Shree Varnika Edible — Royal Craftsmanship, Pure Ingredients",
+    "description": "Manufacturer of hygienic, 100% vegetarian edible silver & gold leaves, premium saffron, hing, spices and pooja articles. Est. 2010, Greater Noida.",
+    "url": "https://www.shreevarnikaedible.com"
+  },
+  "nav": [
+    { "id": "home", "label": "Home", "href": "/" },
+    { "id": "about", "label": "About Us", "href": "/about.html" },
+    { "id": "food", "label": "Food Products", "href": "/products.html?cat=food" },
+    { "id": "herbs", "label": "Herbs & Spices", "href": "/products.html?cat=herbs" },
+    { "id": "pooja", "label": "Pooja Articles", "href": "/products.html?cat=pooja" },
+    { "id": "leaves", "label": "Silver & Gold", "href": "/products.html?cat=leaves" },
+    { "id": "contact", "label": "Contact", "href": "/contact.html" }
+  ],
+  "categories": [
+    { "id": "all", "label": "All Products" },
+    { "id": "food", "label": "Food Products" },
+    { "id": "herbs", "label": "Herbs & Spices" },
+    { "id": "pooja", "label": "Pooja Articles" },
+    { "id": "leaves", "label": "Silver & Gold Leaves" }
+  ],
+  "cta": {
+    "label": "Request a Quote",
+    "href": "/contact.html",
+    "phone": "+91 987-347-7849",
+    "phoneHref": "tel:+919873477849"
+  },
+  "contact": {
+    "address": "E-83, UPSIDC, Site-B, Surajpur, Greater Noida, Uttar Pradesh — 201306, India",
+    "email": "sales@shreevarnikaedible.com",
+    "phone": "+91 987-347-7849",
+    "phoneHref": "tel:+919873477849",
+    "hours": [
+      { "days": "Mon – Sat", "time": "10:00 – 18:30" },
+      { "days": "Sunday", "time": "Closed" }
+    ],
+    "gst": "09AAHCV6293N1Z8"
+  },
+  "trust": [
+    "Hygienic & Pure",
+    "100% Vegetarian",
+    "Manufacturer & Exporter",
+    "Est. 2010, Greater Noida"
+  ],
+  "stats": [
+    { "value": "2010", "label": "Established" },
+    { "value": "13+", "label": "Years of experience" },
+    { "value": "100%", "label": "Vegetarian certified" },
+    { "value": "6+", "label": "Signature products" }
+  ],
+  "instagram": {
+    "handle": "@shreevarnikaedible",
+    "images": [
+      "/assets/images/ig-1.jpg",
+      "/assets/images/ig-2.jpg",
+      "/assets/images/ig-3.jpg",
+      "/assets/images/ig-4.png",
+      "/assets/images/ig-5.jpg",
+      "/assets/images/hing.jpg"
+    ]
+  },
+  "footer": {
+    "blurb": "Founded in 2010 by Mr. Tara Shankar Singh — manufacturing hygienic, pure, 100% vegetarian edible silver & gold leaves, premium spices and pooja articles.",
+    "company": [
+      { "label": "About Us", "href": "/about.html" },
+      { "label": "Contact Us", "href": "/contact.html" },
+      { "label": "Terms & Conditions", "href": "/terms.html" },
+      { "label": "Privacy Policy", "href": "/privacy.html" }
+    ],
+    "social": [
+      { "label": "Instagram", "href": "#", "icon": "instagram" },
+      { "label": "Facebook", "href": "#", "icon": "facebook" },
+      { "label": "YouTube", "href": "#", "icon": "youtube" }
+    ],
+    "copyright": "© 2024 Shree Varnika Edible Pvt. Ltd. — Royal Craftsmanship, Pure Ingredients.",
+    "legal": "GST 09AAHCV6293N1Z8 · Manufacturer & Exporter"
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "100% Vegetarian Gold & Silver Leaves",
+      "title": "Pioneering purity through innovation",
+      "body": "Redefining luxury through accessible, high-quality vegetarian gold and silver leaf manufacturing — blending timeless tradition with automated precision.",
+      "image": "/assets/images/founder.jpg"
+    },
+    "heritage": {
+      "eyebrow": "Our Heritage",
+      "title": "A legacy of automated excellence",
+      "paragraphs": [
+        "Founded in 2010, Shree Varnika began with a singular vision: to revolutionise the traditional art of Vark (leaf) manufacturing. Where others relied on manual, often unhygienic processes, we saw an opportunity for purity through technology.",
+        "Under the guidance of Mr. Tara Shankar Singh, we pioneered the use of KV Automation technology, eliminating human touch from the critical stages of production. Every sheet of gold and silver that leaves our facility is not just luxurious, but certified hygienic and 100% vegetarian."
+      ]
+    },
+    "excellence": [
+      { "title": "Edible Gold & Silver", "body": "Perfectly beaten, ultra-thin leaves for premium sweets, chyawanprash and luxury culinary garnishing." },
+      { "title": "Gourmet Delights", "body": "Exquisite gold dust and silver flakes designed for high-end chocolatiers, bakeries and fine-dining presentation." },
+      { "title": "Luxury Services", "body": "Specialised gold work for temples, idols and architectural heritage restoration requiring authentic purity." }
+    ],
+    "factsheet": [
+      { "label": "Founder & CEO", "value": "Mr. Tarashankar Singh" },
+      { "label": "Nature of Business", "value": "Manufacturer & Exporter" },
+      { "label": "Establishment", "value": "2010" },
+      { "label": "Annual Turnover", "value": "INR 5–10 Crore" },
+      { "label": "Legal Status", "value": "Individual · Proprietor" },
+      { "label": "GST Registration", "value": "09AAHCV6293N1Z8" }
+    ],
+    "leadership": [
+      { "name": "Tarashankar Singh", "role": "Director", "image": "/assets/images/founder.jpg", "initials": "TS" },
+      { "name": "Prince Singh", "role": "Head of R&D", "image": "", "initials": "PS" },
+      { "name": "Gaurav Singh", "role": "Head of Sales", "image": "", "initials": "GS" }
+    ]
+  },
+  "legal": {
+    "contact": {
+      "entity": "Shree Varnika Edible Private Limited",
+      "address": "E-83, UPSIDC, Site-B, Surajpur, Greater Noida, Uttar Pradesh, India, Pin Code - 201306",
+      "email": "sales@shreevarnikaedible.com",
+      "website": "https://shreevarnikaedible.com/"
+    },
+    "docs": {
+      "terms": {
+        "title": "Terms & Conditions",
+        "intro": "Welcome to the Shree Varnika website. Please read these Terms and Conditions carefully before using our website or purchasing our products. By accessing or using our website, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please refrain from using our website.",
+        "sections": [
+          { "heading": "Intellectual Property", "body": "All content on the Shree Varnika website, including but not limited to text, images, logos, trademarks, and product information, is the intellectual property of Shree Varnika and protected by applicable copyright and intellectual property laws. Any unauthorized use, reproduction, or distribution of the content is strictly prohibited." },
+          { "heading": "Product Information", "body": "We strive to provide accurate and up-to-date information about our products. However, we cannot guarantee the accuracy, completeness, or reliability of the product descriptions, pricing, availability, or other information provided on our website. We reserve the right to modify or update the content at any time without prior notice." },
+          { "heading": "Product Purchase and Sales", "body": "By placing an order through our website, you agree to provide accurate, current, and complete information for all required fields. We reserve the right to refuse or cancel any order at our discretion. In the event of a cancellation, we will notify you and refund any payments made for the canceled order." },
+          { "heading": "Pricing and Payments", "body": "All prices listed on the Shree Varnika website are in the applicable currency and exclude taxes, duties, and shipping charges unless otherwise stated. We reserve the right to change the prices of our products at any time without prior notice. Payments for orders must be made through the available payment methods on our website. We do not store or have access to your payment information." },
+          { "heading": "Shipping and Delivery", "body": "We strive to process and ship orders in a timely manner. However, delivery times may vary depending on your location and other factors beyond our control. We are not responsible for any delays or damages that may occur during the shipping process. Additional shipping charges, customs duties, or taxes may apply and are the responsibility of the customer." },
+          { "heading": "Returns and Refunds", "body": "We take pride in the quality of our products. If you receive a damaged or defective product, please contact our customer support team within 30 days of receiving your order. We will assess the issue and, if deemed appropriate, provide a replacement or refund as per our discretion." },
+          { "heading": "Limitation of Liability", "body": "Shree Varnika shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with the use of our website or the purchase of our products. This includes, but is not limited to, any loss of profits, revenue, data, or business interruption." },
+          { "heading": "Governing Law", "body": "These Terms and Conditions shall be governed in all respects by Indian Law and all disputes and litigation arising in any way out of or affecting this Agreement shall be subject to the exclusive jurisdiction of the Indian courts. Any legal actions or proceedings arising out of or relating to these terms shall be exclusively brought in the courts of Ghaziabad District Court, Uttar Pradesh, India." }
+        ],
+        "closing": [
+          "Please note that these Terms and Conditions may be subject to change without prior notice. It is your responsibility to review this page periodically for any updates or modifications.",
+          "If you have any questions or concerns regarding our Terms and Conditions, please contact us at sales@shreevarnikaedible.com."
+        ]
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "intro": "Welcome to the Shree Varnika Privacy Policy. This policy outlines how we collect, use, disclose, and protect your personal information when you visit our website or purchase our products. We are committed to safeguarding your privacy and ensuring that your personal information is handled securely and in compliance with applicable privacy laws.",
+        "sections": [
+          { "heading": "Information We Collect", "body": "When you visit our website or make a purchase, we may collect certain personal information, such as your name, email address, shipping address, and payment details. We collect this information to fulfill your orders, provide customer support, and improve your overall experience with Shree Varnika." },
+          { "heading": "Use of Personal Information", "body": "We use your personal information to process and fulfill your orders, communicate with you regarding your purchases, provide customer support, and respond to your inquiries. We may also use your information to send you promotional offers or newsletters if you have subscribed to them. You have the option to opt-out of receiving such communications." },
+          { "heading": "Information Sharing", "body": "We do not sell, trade, or rent your personal information to third parties for marketing purposes. However, we may share your information with trusted third-party service providers who assist us in operating our website, processing payments, delivering orders, or conducting business activities on our behalf. These third parties are contractually obligated to handle your information securely and in accordance with this Privacy Policy." },
+          { "heading": "Data Security", "body": "We take the security of your personal information seriously. We implement industry-standard security measures to protect your data from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security." },
+          { "heading": "Cookies and Tracking Technologies", "body": "Our website may use cookies and similar tracking technologies to enhance your browsing experience, analyze website usage, and personalize content. You have the option to disable cookies through your web browser settings, although this may affect your ability to access certain features of our website." },
+          { "heading": "Third-Party Links", "body": "Our website may contain links to third-party websites or services. Please note that we are not responsible for the privacy practices or content of those websites. We encourage you to review the privacy policies of third-party websites before providing any personal information." },
+          { "heading": "Children's Privacy", "body": "Our website and products are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If you believe that we may have inadvertently collected personal information from a child, please contact us immediately, and we will take appropriate steps to delete the information." },
+          { "heading": "Changes to the Privacy Policy", "body": "We may update this Privacy Policy from time to time to reflect changes in our business practices or legal requirements. We will notify you of any significant changes by posting the updated Privacy Policy on our website. We encourage you to review this policy periodically to stay informed about how we handle your personal information." }
+        ],
+        "closing": [
+          "If you have any questions or concerns about our Privacy Policy, please contact us at sales@shreevarnikaedible.com."
+        ]
+      }
+    }
+  }
+}

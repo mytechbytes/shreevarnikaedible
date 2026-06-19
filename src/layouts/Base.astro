@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import site from "../data/site.json";
+import themes from "../data/themes.json";
+import items from "../data/items.json";
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeId?: string;
+  image?: string;
+  canonical?: string;
+}
+const {
+  title = site.seo.title,
+  description = site.seo.description,
+  activeId = "",
+  image = site.about.hero.image,
+  canonical,
+} = Astro.props;
+
+// Build html[data-theme="…"] override blocks from themes.json → injected once,
+// globally. html[data-theme] (element+attribute) outranks :root on the tie.
+const themeCss = Object.entries(themes.tokens)
+  .map(([name, vars]) => {
+    const decls = Object.entries(vars as Record<string, string>)
+      .map(([k, v]) => `--${k}:${v};`)
+      .join("");
+    return `html[data-theme="${name}"]{${decls}}`;
+  })
+  .join("\n");
+
+// Slim product data exposed to the interaction scripts (cart + quick-view).
+// Content is already baked into the HTML; this is data for behaviour only.
+const itemsIsland = items.map((p) => ({
+  id: p.id, name: p.name, slug: p.slug, category: p.category,
+  collection: p.collection, image: p.image, badge: p.badge,
+  rating: p.rating, from: p.from, short: p.short, sizes: p.sizes,
+}));
+---
+<!DOCTYPE html>
+<html lang="en" data-theme={themes.default} data-bg={themes.defaultBg}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Theme palette override blocks (from themes.json) -->
+    <style is:global set:html={themeCss}></style>
+
+    <!-- Pre-paint: restore theme + bg from localStorage, mark JS available -->
+    <script
+      is:inline
+      define:vars={{
+        themeKey: themes.storageKeys.theme,
+        bgKey: themes.storageKeys.bg,
+        defTheme: themes.default,
+        defBg: themes.defaultBg,
+      }}
+    >
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
+        try {
+          var t = localStorage.getItem(themeKey);
+          if (t) d.dataset.theme = t;
+          var bg = localStorage.getItem(bgKey);
+          if (bg === "white" || bg === "tint") d.dataset.bg = bg;
+        } catch (e) {
+          d.dataset.theme = defTheme;
+          d.dataset.bg = defBg;
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <Header activeId={activeId} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script type="application/json" id="sv-items" is:inline set:html={JSON.stringify(itemsIsland)}></script>
+
+    <script>
+      import "../scripts/theme.js";
+      import "../scripts/nav.js";
+      import "../scripts/reveal.js";
+      import "../scripts/cart.js";
+      import "../scripts/quickview.js";
+    </script>
+  </body>
+</html>

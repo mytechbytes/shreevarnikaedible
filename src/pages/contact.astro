@@ -1,0 +1,137 @@
+---
+import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import site from "../data/site.json";
+const c = site.contact;
+---
+<Base
+  title="Contact Us — Shree Varnika Edible"
+  description="Get in touch with Shree Varnika Edible Pvt. Ltd. for wholesale, export and product enquiries."
+  activeId="contact"
+>
+  <section class="band-brand">
+    <div class="wrap" style="padding-block:clamp(36px,7vw,64px)">
+      <p class="eyebrow mb-2">Contact Us</p>
+      <h1 style="font-size:clamp(2.2rem,7vw,3.4rem)">Let's talk luxury</h1>
+      <p class="muted" style="max-width:54ch;margin-top:.6rem">For wholesale, export, custom coating and sample requests, our team is ready to help.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-5 gap-10">
+        <!-- FORM -->
+        <div style="grid-column:span 3" class="lg:col-span-3">
+          <div class="card" style="padding:clamp(20px,4vw,34px)">
+            <h2 class="serif" style="font-size:1.6rem;margin-bottom:1.2rem">Send an enquiry</h2>
+            <form data-contact-form>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div><label class="label" for="f-name">Full name</label><input class="field" id="f-name" required placeholder="Your name" /></div>
+                <div><label class="label" for="f-company">Company</label><input class="field" id="f-company" placeholder="Business name (optional)" /></div>
+                <div><label class="label" for="f-email">Email</label><input class="field" id="f-email" type="email" required placeholder="you@email.com" /></div>
+                <div><label class="label" for="f-phone">Phone</label><input class="field" id="f-phone" placeholder="+91 …" /></div>
+              </div>
+              <div style="margin-top:1rem"><label class="label" for="f-interest">Interested in</label>
+                <select class="field" id="f-interest">
+                  <option>Silver &amp; Gold Leaves</option>
+                  <option>Food Products (Saffron, Hing)</option>
+                  <option>Herbs &amp; Spices</option>
+                  <option>Pooja Articles</option>
+                  <option>Wholesale / Export</option>
+                </select>
+              </div>
+              <div style="margin-top:1rem"><label class="label" for="f-msg">Message</label><textarea class="field" id="f-msg" rows="4" placeholder="Tell us about quantities, sizes or any custom requirement…"></textarea></div>
+              <button class="btn btn-primary btn-block" type="submit" style="margin-top:1.2rem">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- DETAILS -->
+        <aside style="grid-column:span 2" class="lg:col-span-2">
+          <div class="card" style="padding:26px;margin-bottom:18px">
+            <h3 class="serif" style="font-size:1.3rem;margin-bottom:1rem">Headquarters</h3>
+            <p style="display:flex;gap:.7rem;color:var(--ink-soft);font-size:.95rem"><span style="color:var(--brand-600);flex:none"><Icon name="pin" size={16} /></span>{c.address}</p>
+            <div class="divider" style="margin:1rem 0"></div>
+            <a href={`mailto:${c.email}`} style="display:flex;gap:.7rem;align-items:center;color:var(--ink);font-size:.95rem;padding:.3rem 0"><span style="color:var(--brand-600)"><Icon name="mail" size={16} /></span>{c.email}</a>
+            <a href={c.phoneHref} style="display:flex;gap:.7rem;align-items:center;color:var(--ink);font-size:.95rem;padding:.3rem 0"><span style="color:var(--brand-600)"><Icon name="phone" size={16} /></span>{c.phone}</a>
+          </div>
+          <div class="card band-deep" style="padding:26px;border:none">
+            <h3 class="serif" style="font-size:1.3rem;color:#fff;margin-bottom:.5rem">Business hours</h3>
+            {c.hours.map((h) => (
+              <div style="display:flex;justify-content:space-between;color:#d9d2c6;font-size:.92rem;padding:.3rem 0"><span>{h.days}</span><span>{h.time}</span></div>
+            ))}
+            <p style="color:var(--brand-300);font-size:.82rem;margin-top:1rem">Manufacturer &amp; Exporter · GST {c.gst}</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email-server error modal (shown on submit) -->
+  <div class="modal" data-enquiry-modal role="dialog" aria-modal="true" aria-label="Enquiry could not be sent">
+    <div class="modal-bg" data-close-enquiry></div>
+    <div class="modal-card" style="width:min(92%,480px);max-width:480px">
+      <button class="modal-close" data-close-enquiry aria-label="Close"><Icon name="close" size={22} /></button>
+      <div style="padding:clamp(28px,5vw,40px);text-align:center">
+        <div style="width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;background:color-mix(in srgb,var(--accent-2) 14%,transparent);color:var(--accent-2)">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        </div>
+        <h3 class="serif" style="font-size:1.5rem;margin-bottom:.5rem">We couldn’t send your enquiry right now</h3>
+        <p class="muted" style="font-size:.96rem;max-width:42ch;margin:0 auto 1.4rem">Our email server is currently facing some issues. Please connect with us directly on the number below, or send your enquiry by email — our team will respond promptly.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+          <a class="btn btn-primary" href={c.phoneHref}><Icon name="phone" size={16} /> Call {c.phone}</a>
+          <a class="btn btn-outline" href={`mailto:${c.email}`}><Icon name="mail" size={16} /> Email us</a>
+        </div>
+        <p class="muted" style="font-size:.82rem;margin-top:1rem">{c.email}</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Build a message from the enquiry list (localStorage) using the #sv-items
+    // data island for product names; prefill the contact form when arriving from
+    // the cart's "Send Enquiry" (/contact.html?enquiry=1).
+    function buildEnquiryMessage() {
+      let cart = [];
+      try { cart = JSON.parse(localStorage.getItem("sv-enquiry")) || []; } catch {}
+      if (!cart.length) return "";
+      let items = [];
+      try { items = JSON.parse(document.getElementById("sv-items")?.textContent || "[]"); } catch {}
+      const nameOf = (id) => (items.find((p) => p.id === id) || {}).name || id;
+      const lines = cart.map((it) => {
+        const size = it.size ? ` — ${it.size}` : "";
+        return `• ${nameOf(it.id)}${size} (Qty: ${it.qty})`;
+      });
+      return (
+        "I would like to enquire about the following product(s):\n\n" +
+        lines.join("\n") +
+        "\n\nPlease share pricing, availability and bulk/wholesale options. Thank you."
+      );
+    }
+
+    function prefillFromEnquiry() {
+      if (!new URLSearchParams(location.search).has("enquiry")) return;
+      const msg = buildEnquiryMessage();
+      const box = document.getElementById("f-msg");
+      if (box && msg) {
+        box.value = msg;
+        document.querySelector("[data-contact-form]")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+
+    function initModal() {
+      const modal = document.querySelector("[data-enquiry-modal]");
+      const form = document.querySelector("[data-contact-form]");
+      if (!modal || !form) return;
+      const open = () => { modal.classList.add("open"); document.body.style.overflow = "hidden"; };
+      const close = () => { modal.classList.remove("open"); document.body.style.overflow = ""; };
+      form.addEventListener("submit", (e) => { e.preventDefault(); open(); });
+      modal.querySelectorAll("[data-close-enquiry]").forEach((b) => b.addEventListener("click", close));
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("open")) close(); });
+    }
+
+    function init() { prefillFromEnquiry(); initModal(); }
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+    else init();
+  </script>
+</Base>

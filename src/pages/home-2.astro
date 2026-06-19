@@ -1,0 +1,124 @@
+---
+import Base from "../layouts/Base.astro";
+import ProductCard from "../components/ProductCard.astro";
+import itemsData from "../data/items.json";
+import site from "../data/site.json";
+const items = itemsData;
+const ig = site.instagram.images;
+const tiles = [
+  { id: "leaves", label: "Silver & Gold Leaves", more: "Edible vark", img: "/assets/images/gold-leaves.jpg" },
+  { id: "food", label: "Food Products", more: "Saffron & Hing", img: "/assets/images/hing.jpg" },
+  { id: "herbs", label: "Herbs & Spices", more: "Coated & pure", img: "/assets/images/cardamom.jpg" },
+  { id: "pooja", label: "Pooja Articles", more: "Coated rituals", img: "/assets/images/pooja.jpg" },
+];
+---
+<Base title="Shree Varnika Edible — Luxury You Can Taste" activeId="home">
+  <!-- FULL-BLEED HERO -->
+  <section style="position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden">
+    <img src="/assets/images/dryfruits.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(20,16,12,.92) 8%,rgba(20,16,12,.35) 55%,rgba(20,16,12,.55))"></div>
+    <div class="wrap" style="position:relative;z-index:2;padding-block:48px;width:100%">
+      <p class="eyebrow" style="color:var(--brand-300);margin-bottom:1rem">Royal Craftsmanship, Pure Ingredients</p>
+      <h1 style="color:#fff;font-size:clamp(2.8rem,10vw,5.6rem);max-width:16ch">Luxury you can taste.</h1>
+      <p style="color:#e7e0d4;font-size:1.1rem;max-width:50ch;margin-top:1.2rem">
+        Hygienic, 100% vegetarian edible silver &amp; gold leaves, premium saffron and hing, coated dry fruits and pooja
+        articles — manufactured with automated precision since 2010.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:1.8rem">
+        <a class="btn btn-primary" href="/products.html">Shop the Collection</a>
+        <a class="btn btn-outline" href="/about.html" style="border-color:rgba(255,255,255,.45);color:#fff">Our Heritage</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIG CATEGORY BLOCKS -->
+  <section class="section">
+    <div class="wrap">
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:end;justify-content:space-between;margin-bottom:30px">
+        <div>
+          <p class="eyebrow mb-2">Browse by Category</p>
+          <h2 style="font-size:clamp(2rem,6vw,3rem)">Four collections, one standard</h2>
+        </div>
+        <a class="btn btn-outline btn-sm" href="/products.html">All Products</a>
+      </div>
+      <div class="grid grid-cols-2 gap-4 lg:gap-6">
+        {tiles.map((t) => (
+          <a class="cat-tile reveal" href={`/products.html?cat=${t.id}`} style="aspect-ratio:1/1">
+            <img src={t.img} alt={t.label} />
+            <div class="cat-tile-cap"><h3 style="font-size:1.5rem">{t.label}</h3><span class="more">{t.more} →</span></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="band-deep">
+    <div class="wrap" style="padding-block:46px">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><div class="stat-num" style="color:var(--brand-300)">2010</div><p style="color:#d9d2c6;font-size:.84rem">Established</p></div>
+        <div><div class="stat-num" style="color:var(--brand-300)" data-count="13" data-suffix="+">13+</div><p style="color:#d9d2c6;font-size:.84rem">Years experience</p></div>
+        <div><div class="stat-num" style="color:var(--brand-300)" data-count="100" data-suffix="%">100%</div><p style="color:#d9d2c6;font-size:.84rem">Vegetarian</p></div>
+        <div><div class="stat-num" style="color:var(--brand-300)">KV</div><p style="color:#d9d2c6;font-size:.84rem">Automation</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID PROMINENT -->
+  <section class="section">
+    <div class="wrap">
+      <div class="reveal" style="text-align:center;max-width:44ch;margin:0 auto 34px">
+        <p class="eyebrow mb-2">The Collection</p>
+        <h2 style="font-size:clamp(2rem,6vw,3rem)">Every piece, crafted to luxury standard</h2>
+      </div>
+      <div class="prod-grid cols-4">
+        {items.map((p) => <ProductCard item={p} />)}
+      </div>
+      <div style="text-align:center;margin-top:34px">
+        <a class="btn btn-primary" href="/products.html">View Full Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFFRON FEATURE -->
+  <section class="band-dark">
+    <div class="wrap section">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal" style="border-radius:22px;overflow:hidden;aspect-ratio:4/3">
+          <img class="hero-img" src="/assets/images/saffron.png" alt="Saffron" />
+        </div>
+        <div class="reveal">
+          <p class="eyebrow mb-3">Spotlight · Saffron</p>
+          <h2 style="color:#fff;font-size:clamp(2rem,6vw,3rem)">The world's most precious spice</h2>
+          <p style="color:#cbc3b6;margin-top:1rem;max-width:48ch">Handpicked threads with vibrant colour, distinct aroma and exquisite flavour — sourced from reputable farms for authenticity and optimal quality.</p>
+          <a class="btn btn-primary" href="/products/varnika-premium-saffron.html" style="margin-top:1.5rem">Discover Saffron</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section">
+    <div class="wrap">
+      <div style="text-align:center;margin-bottom:24px">
+        <p class="eyebrow mb-2">{site.instagram.handle}</p>
+        <h2 style="font-size:clamp(1.8rem,5vw,2.4rem)">Follow the craft</h2>
+      </div>
+      <div class="ig-grid">
+        {ig.map((src) => <a class="ig-cell" href="#"><img src={src} alt="" loading="lazy" /></a>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="band-brand">
+    <div class="wrap section" style="text-align:center">
+      <p class="eyebrow mb-3">Trade &amp; Bulk Enquiries</p>
+      <h2 style="font-size:clamp(2rem,6vw,3rem);max-width:18ch;margin:0 auto">Stock the royal standard</h2>
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:1.6rem;flex-wrap:wrap">
+        <a class="btn btn-primary" href="/contact.html">Request a Quote</a>
+        <a class="btn btn-outline" href={site.cta.phoneHref}>{site.cta.phone}</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="tuscan-sun">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Shree Varnika Edible</title>
+  <meta name="description" content="Get in touch with Shree Varnika Edible Pvt. Ltd. for wholesale, export and product enquiries.">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div data-site-header></div>
+
+  <main>
+    <section class="band-brand">
+      <div class="wrap" style="padding-block:clamp(36px,7vw,64px)">
+        <p class="eyebrow mb-2">Contact Us</p>
+        <h1 style="font-size:clamp(2.2rem,7vw,3.4rem)">Let's talk luxury</h1>
+        <p class="muted" style="max-width:54ch;margin-top:.6rem">For wholesale, export, custom coating and sample requests, our team is ready to help.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="grid lg:grid-cols-5 gap-10">
+          <!-- FORM -->
+          <div style="grid-column:span 3" class="lg:col-span-3">
+            <div class="card" style="padding:clamp(20px,4vw,34px)">
+              <h2 class="serif" style="font-size:1.6rem;margin-bottom:1.2rem">Send an enquiry</h2>
+              <form data-contact-form>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div><label class="label" for="f-name">Full name</label><input class="field" id="f-name" required placeholder="Your name"></div>
+                  <div><label class="label" for="f-company">Company</label><input class="field" id="f-company" placeholder="Business name (optional)"></div>
+                  <div><label class="label" for="f-email">Email</label><input class="field" id="f-email" type="email" required placeholder="you@email.com"></div>
+                  <div><label class="label" for="f-phone">Phone</label><input class="field" id="f-phone" placeholder="+91 …"></div>
+                </div>
+                <div style="margin-top:1rem"><label class="label" for="f-interest">Interested in</label>
+                  <select class="field" id="f-interest">
+                    <option>Silver &amp; Gold Leaves</option>
+                    <option>Food Products (Saffron, Hing)</option>
+                    <option>Herbs &amp; Spices</option>
+                    <option>Pooja Articles</option>
+                    <option>Wholesale / Export</option>
+                  </select>
+                </div>
+                <div style="margin-top:1rem"><label class="label" for="f-msg">Message</label><textarea class="field" id="f-msg" rows="4" placeholder="Tell us about quantities, sizes or any custom requirement…"></textarea></div>
+                <button class="btn btn-primary btn-block" type="submit" style="margin-top:1.2rem">Send Enquiry</button>
+                <p data-form-note class="muted" style="font-size:.82rem;margin-top:.8rem;display:none"></p>
+              </form>
+            </div>
+          </div>
+
+          <!-- DETAILS -->
+          <aside style="grid-column:span 2" class="lg:col-span-2">
+            <div class="card" style="padding:26px;margin-bottom:18px">
+              <h3 class="serif" style="font-size:1.3rem;margin-bottom:1rem">Headquarters</h3>
+              <p style="display:flex;gap:.7rem;color:var(--ink-soft);font-size:.95rem"><span style="color:var(--brand-600);flex:none" data-ic="pin"></span>E-83, UPSIDC, Site-B, Surajpur, Greater Noida, Uttar Pradesh — 201306, India</p>
+              <div class="divider" style="margin:1rem 0"></div>
+              <a href="mailto:sales@shreevarnikaedible.com" style="display:flex;gap:.7rem;align-items:center;color:var(--ink);font-size:.95rem;padding:.3rem 0"><span style="color:var(--brand-600)" data-ic="mail"></span>sales@shreevarnikaedible.com</a>
+              <a href="tel:+919873477849" style="display:flex;gap:.7rem;align-items:center;color:var(--ink);font-size:.95rem;padding:.3rem 0"><span style="color:var(--brand-600)" data-ic="phone"></span>+91 987-347-7849</a>
+            </div>
+            <div class="card band-deep" style="padding:26px;border:none">
+              <h3 class="serif" style="font-size:1.3rem;color:#fff;margin-bottom:.5rem">Business hours</h3>
+              <div style="display:flex;justify-content:space-between;color:#d9d2c6;font-size:.92rem;padding:.3rem 0"><span>Mon – Sat</span><span>10:00 – 18:30</span></div>
+              <div style="display:flex;justify-content:space-between;color:#d9d2c6;font-size:.92rem;padding:.3rem 0"><span>Sunday</span><span>Closed</span></div>
+              <p style="color:var(--brand-300);font-size:.82rem;margin-top:1rem">Manufacturer &amp; Exporter · GST 09AAHCV6293N1Z8</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <script src="main.js"></script>
+  <script>
+    document.addEventListener("sv:ready", function () {
+      var map = { pin: SV_ICONS.pin, mail: SV_ICONS.mail, phone: SV_ICONS.phone };
+      document.querySelectorAll("[data-ic]").forEach(function (s) { s.innerHTML = map[s.dataset.ic] || ""; });
+      var form = document.querySelector("[data-contact-form]");
+      if (form) form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var note = form.querySelector("[data-form-note]");
+        note.style.display = "block";
+        note.style.color = "var(--brand-700)";
+        note.textContent = "Thank you — your enquiry has been noted. Our team will respond within one business day. (Showcase form — no message is actually sent.)";
+        form.reset();
+        SV_toast("Enquiry submitted");
+      });
+    });
+  </script>
+</body>
+</html>
