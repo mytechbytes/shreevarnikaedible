@@ -8,7 +8,6 @@ const featured = items.slice(0, 6);
 const ig = site.instagram.images;
 const tiles = [
   { id: "food", label: "Food Products", more: "Saffron, Hing & more", img: "/assets/images/hing.jpg" },
-  { id: "herbs", label: "Herbs & Spices", more: "Coated & pure", img: "/assets/images/cardamom.jpg" },
   { id: "pooja", label: "Pooja Articles", more: "Silver & gold coated", img: "/assets/images/pooja.jpg" },
   { id: "leaves", label: "Silver & Gold Leaves", more: "Edible vark", img: "/assets/images/gold-leaves.jpg" },
 ];
@@ -67,7 +66,7 @@ const tiles = [
         <p class="eyebrow mb-3">View by Categories</p>
         <h2 style="font-size:clamp(2rem,6vw,2.9rem)">Curated collections of edible elegance</h2>
       </div>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
         {tiles.map((t) => (
           <a class="cat-tile reveal" href={`/products.html?cat=${t.id}`}>
             <img src={t.img} alt={t.label} />

@@ -11,7 +11,6 @@
   const img = (id) => CDN + id; // bare original asset URL (reliably renders in <img>)
   const IMG = {
     hing:      img("31f928_3c0c7da1c0c44acb8d816fb379448785~mv2.jpg"),
-    herbs:     img("31f928_4e747229c3694731a756577b46b2ff74~mv2.jpg"),
     pooja:     img("31f928_7d83702a48ee4e1d8edd1db6424e1aa6~mv2.jpg"),
     leaves:    img("31f928_dd8222fd5cb3430f8494908071c795a9~mv2.jpg"),
     silver:    img("31f928_afc2304b74ba45929450461fb69edeac~mv2.jpg"),
@@ -31,7 +30,6 @@
   const CATS = [
     { id: "all",    label: "All Products" },
     { id: "food",   label: "Food Products" },
-    { id: "herbs",  label: "Herbs & Spices" },
     { id: "pooja",  label: "Pooja Articles" },
     { id: "leaves", label: "Silver & Gold Leaves" }
   ];
@@ -54,14 +52,6 @@
       short: "Strong, aromatic asafoetida that lends an unmistakable depth to dals, curries and tempering.",
       desc: "Varnika Premium Hing is milled to a fine, consistent grade with a powerful aroma that blooms in hot oil. A pinch transforms everyday dals, curries and pickles — a kitchen essential crafted to exacting purity standards.",
       notes: ["Bold, lasting aroma", "Vegetarian & pure", "Finely milled grade"]
-    },
-    {
-      id: "silver-cardamom", name: "Varnika Premium Silver-Coated Cardamom (Elaichi)", cat: "herbs",
-      collection: "New Additions", img: IMG.herbs, badge: "New", rating: 5,
-      sizes: ["100 GM", "250 GM"], from: "₹ 349",
-      short: "Fragrant green cardamom delicately wrapped in edible silver — a royal mouth-freshener and garnish.",
-      desc: "Whole green cardamom dressed in hygienic, 100% vegetarian edible silver leaf. A regal after-dinner mukhwas and a striking garnish for mithai, paan and festive thaals — where fragrance meets opulence.",
-      notes: ["Edible silver coating", "Whole, aromatic pods", "Festive & gifting favourite"]
     },
     {
       id: "pooja", name: "Various Silver & Gold-Coated Pooja Articles", cat: "pooja",
@@ -302,7 +292,6 @@
     { href: "index.html", label: "Home" },
     { href: "about.html", label: "About Us" },
     { href: "products.html?cat=food", label: "Food Products" },
-    { href: "products.html?cat=herbs", label: "Herbs & Spices" },
     { href: "products.html?cat=pooja", label: "Pooja Articles" },
     { href: "products.html?cat=leaves", label: "Silver & Gold" },
     { href: "contact.html", label: "Contact" }

@@ -64,38 +64,6 @@
     "applications": ["Dal & Kadhi", "Tempering", "Pickles", "Curries"]
   },
   {
-    "id": "silver-cardamom",
-    "slug": "varnika-premium-silver-coated-cardamom-elaichi",
-    "name": "Varnika Premium Silver-Coated Cardamom (Elaichi)",
-    "category": "herbs",
-    "collection": "New Additions",
-    "badge": "New",
-    "rating": 5,
-    "from": "₹ 349",
-    "sizes": ["100 GM", "250 GM"],
-    "short": "Fragrant green cardamom delicately wrapped in edible silver — a royal mouth-freshener and garnish.",
-    "desc": "Whole green cardamom dressed in hygienic, 100% vegetarian edible silver leaf. A regal after-dinner mukhwas and a striking garnish for mithai, paan and festive thaals — where fragrance meets opulence.",
-    "notes": ["Edible silver coating", "Whole, aromatic pods", "Festive & gifting favourite"],
-    "image": "/assets/images/cardamom.jpg",
-    "gallery": [
-      "/assets/images/cardamom.jpg",
-      "/assets/images/cardamom-detail.jpg",
-      "/assets/images/cardamom-warm.jpg",
-      "/assets/images/cardamom-cool.jpg"
-    ],
-    "specs": [
-      { "label": "Product type", "value": "Silver-coated Green Cardamom" },
-      { "label": "Form", "value": "Whole pods with edible silver vark" },
-      { "label": "Net weight", "value": "100g · 250g" },
-      { "label": "Coating", "value": "Edible silver leaf" },
-      { "label": "Diet", "value": "100% Vegetarian" },
-      { "label": "Shelf life", "value": "12 months" }
-    ],
-    "usage": "Serve as a royal after-meal mouth freshener, or use to garnish mithai, paan and festive thaals.",
-    "storage": "Keep in a cool, dry place in an airtight container. Handle gently to protect the silver coating.",
-    "applications": ["Mouth freshener", "Mithai garnish", "Paan", "Festive gifting"]
-  },
-  {
     "id": "pooja",
     "slug": "various-silver-and-gold-coated-pooja-articles",
     "name": "Various Silver & Gold-Coated Pooja Articles",
