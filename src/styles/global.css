@@ -1,5 +1,5 @@
 /* ============================================================
-   Shree Varnika Edible — global styles
+   Shree Varnika Edible Products — global styles
    Fonts → Tailwind → @theme tokens → runtime theme vars → components
    Themeable colours live in CSS custom properties so html[data-theme]
    (injected from themes.json) can swap the whole palette at runtime.

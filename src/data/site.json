@@ -1,12 +1,12 @@
 {
   "brand": {
-    "name": "Shree Varnika Edible",
+    "name": "Shree Varnika Edible Products",
     "suffix": "Pvt. Ltd.",
     "logo": "/assets/images/logo.png",
     "tagline": "Royal Craftsmanship, Pure Ingredients"
   },
   "seo": {
-    "title": "Shree Varnika Edible — Royal Craftsmanship, Pure Ingredients",
+    "title": "Shree Varnika Edible Products — Royal Craftsmanship, Pure Ingredients",
     "description": "Manufacturer of hygienic, 100% vegetarian edible silver & gold leaves, premium saffron, hing, spices and pooja articles. Greater Noida.",
     "url": "https://www.shreevarnikaedible.com"
   },
@@ -76,7 +76,7 @@
       { "label": "Facebook", "href": "#", "icon": "facebook" },
       { "label": "YouTube", "href": "#", "icon": "youtube" }
     ],
-    "copyright": "© 2024 Shree Varnika Edible Pvt. Ltd. — Royal Craftsmanship, Pure Ingredients.",
+    "copyright": "© 2024 Shree Varnika Edible Products Pvt. Ltd. — Royal Craftsmanship, Pure Ingredients.",
     "legal": "GST 09AAHCV6293N1Z8 · Manufacturer & Exporter"
   },
   "about": {
@@ -114,7 +114,7 @@
   },
   "legal": {
     "contact": {
-      "entity": "Shree Varnika Edible Private Limited",
+      "entity": "Shree Varnika Edible Products Private Limited",
       "address": "E-83, UPSIDC, Site-B, Surajpur, Greater Noida, Uttar Pradesh, India, Pin Code - 201306",
       "email": "sales@shreevarnikaedible.com",
       "website": "https://shreevarnikaedible.com/"

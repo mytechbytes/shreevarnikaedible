@@ -1,4 +1,4 @@
-# Shree Varnika Edible — static site
+# Shree Varnika Edible Products — static site
 
 Production static site built with **Astro 6** + **Tailwind 4** (`@tailwindcss/vite`) + **Vite 8**.
 All content is baked into HTML at build time from `src/data/*.json`; JavaScript is used only

@@ -1,5 +1,5 @@
 /* ============================================================
-   Shree Varnika Edible — site logic
+   Shree Varnika Edible Products — site logic
    Shared chrome (header/footer), product data, theme switcher,
    mobile nav, quick-view modal, enquiry list, filters, reveals.
    ============================================================ */
@@ -311,10 +311,10 @@
     host.innerHTML = `
       <header class="site-header">
         <div class="wrap hdr-row">
-          <a class="brand" href="index.html" aria-label="Shree Varnika Edible home">
-            <img class="brand-logo" src="assets/logo.png" alt="Shree Varnika Edible Pvt. Ltd.">
+          <a class="brand" href="index.html" aria-label="Shree Varnika Edible Products home">
+            <img class="brand-logo" src="assets/logo.png" alt="Shree Varnika Edible Products Pvt. Ltd.">
             <span class="leading-none">
-              <span class="brand-name">Shree Varnika Edible</span>
+              <span class="brand-name">Shree Varnika Edible Products</span>
               <span class="brand-sub" style="display:block">Pvt. Ltd.</span>
             </span>
           </a>
@@ -356,8 +356,8 @@
           <div class="foot-cols">
             <div>
               <a class="brand" href="index.html" style="margin-bottom:1rem">
-                <img class="brand-logo" src="assets/logo.png" alt="Shree Varnika Edible Pvt. Ltd." style="height:54px">
-                <span><span class="brand-name" style="color:#fff">Shree Varnika Edible</span>
+                <img class="brand-logo" src="assets/logo.png" alt="Shree Varnika Edible Products Pvt. Ltd." style="height:54px">
+                <span><span class="brand-name" style="color:#fff">Shree Varnika Edible Products</span>
                 <span class="brand-sub" style="display:block;color:var(--brand-300)">Pvt. Ltd.</span></span>
               </a>
               <p style="max-width:34ch;color:#b7afa3;font-size:.92rem">Founded in 2010 by Mr. Tara Shankar Singh — manufacturing hygienic, pure, 100% vegetarian edible silver &amp; gold leaves, premium spices and pooja articles.</p>
@@ -402,7 +402,7 @@
           </div>
           <div class="divider" style="background:rgba(255,255,255,.1);margin:34px 0 20px"></div>
           <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:.82rem;color:#9a9286">
-            <span>© 2024 Shree Varnika Edible Pvt. Ltd. — Royal Craftsmanship, Pure Ingredients.</span>
+            <span>© 2024 Shree Varnika Edible Products Pvt. Ltd. — Royal Craftsmanship, Pure Ingredients.</span>
             <span>GST 09AAHCV6293N1Z8 · Manufacturer &amp; Exporter</span>
           </div>
         </div>
@@ -564,7 +564,7 @@
     const slug = host.dataset.slug;
     const id = new URLSearchParams(location.search).get("id");
     const p = (slug && findBySlug(slug)) || findProduct(id) || PRODUCTS[0];
-    document.title = p.name + " — Shree Varnika Edible";
+    document.title = p.name + " — Shree Varnika Edible Products";
     const related = PRODUCTS.filter(x => x.id !== p.id && x.cat === p.cat).concat(PRODUCTS.filter(x => x.cat !== p.cat)).slice(0, 4);
     const specRows = (p.specs || []).map(s =>
       `<div style="display:flex;justify-content:space-between;gap:18px;padding:.72rem 0;border-bottom:1px solid var(--line)"><span class="muted" style="font-size:.88rem">${s.label}</span><span style="font-weight:600;font-size:.9rem;text-align:right">${s.value}</span></div>`).join("");
